@@ -11,7 +11,7 @@ triangles = File.open(path.strip!, 'r').readlines.map! {|t| t.strip!.split.map! 
 def is_triangle?(t)
 	#binding.pry
 	t.sort!
-	t[2] > t[0] + t[1] ? false : true
+	(t[2] < t[0] + t[1]) ? true : false
 end
 
 triangles.each do |triangle|
@@ -24,4 +24,4 @@ triangles.each do |triangle|
 end
 
 puts "Possible triangles: #{possible_triangles}"
-puts triangles
+#puts triangles
